@@ -1,0 +1,398 @@
+/*
+ * Theme Name: western-coating
+ * Description: Starter Theme to use with Timber
+ * Author: Upstatement and YOU!
+*/
+:root {
+    --body-bg: #F4F4F4;
+    --button-clr: #648F48;
+    --light: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--body-bg);
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    background: var(--body-bg);
+}
+
+.btn {
+    padding: .75em;
+}
+
+.btn-primary {
+    background: var(--button-clr);
+    border: none;
+}
+
+.btn-primary:hover, .btn-primary:target, .btn-primary:focus, .btn-primary:active {
+    background: #4c6a39 !important;
+    border: none;
+    
+}
+
+.page-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: var(--body-bg);
+}
+
+.logo-container {
+    padding: 0 6em 0 4em;
+    background: var(--light);
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 90% 100%);
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.blurb {
+    position: absolute;
+    top: 40%;
+    left: 12.25%;
+    max-width: 725px;
+    font-size: 2.5em;
+    padding: .5em 4em .5em 1.5em;
+    background: #000000de;
+    color: var(--light);
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 90% 100%);
+}
+
+.card-group {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+.emphasis {
+    color: blue;
+}
+
+.location-item {
+    display: flex;
+    margin-bottom: 4em;
+}
+
+.location-item img {
+    border: 10px solid var(--light);
+    position: relative;
+    z-index: 1;
+}
+
+.location-info {
+    background: var(--light);
+    padding: 4.75em 1em;
+    line-height: 1em;
+    position: relative;
+    font-size: 1em;
+}
+
+.location-info::after {
+    z-index: 0;
+    content: " ";
+    position: absolute;
+    right: 99%;
+    top: 0;
+    height: 100%;
+    width: 300px;
+    clip-path: polygon(100% 0%, 70% 0%, 0% 100%, 100% 100%);
+    background: var(--light);
+}
+
+hr {
+    height: 4px;
+    margin-right: 7em;
+    background: var(--button-clr);
+    display: flex;
+    
+}
+
+.line {
+    height: 4px;
+    width: 80%;
+    background: var(--button-clr);
+    margin-bottom: .9em;
+}
+
+.location-contact {
+    height: 1em;
+    padding: .5em 3.5em .5em .5em;
+    background: linear-gradient(120deg, #648f48 0, #648f48 calc(100% - 45px), transparent calc(100% - 45px), transparent calc(100% - 40px), black calc(100% - 40px), black calc(100% - 30px), transparent calc(100% - 30px));
+}
+
+.location-item a {
+    color: var(--light)
+}
+
+.product-images {
+    background: black;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "one two two" "one three four";
+    width: 80%;
+    margin: 0 auto;
+    gap: 1.875em;
+}
+
+.one {
+    grid-area: one;
+    width: 100%;
+}
+
+.two {
+    grid-area: two;
+    width: 100%;
+}
+
+.three {
+    grid-area: three;
+    width: 100%;
+}
+
+.four {
+    grid-area: four;
+    width: 100%;
+}
+
+.affiliates {
+    background: var(--light);
+    padding-bottom: 2em;
+}
+
+.affiliates h5 {
+    text-align: center;
+    padding: 2em 0 .5em 0;
+    font-size: 1.8em;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badges img {
+    width: 15%;
+    padding: 2em 2em 1em 2em;
+}
+
+.badges .longer {
+    width: 30%;
+}
+
+.company-family {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 4px solid var(--button-clr)
+}
+
+.family-images {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 1em 1em 5em;
+    width: 600px;
+    background: var(--light);
+    clip-path: polygon(100% 0%, 10% 0%, 0% 100%, 100% 100%);
+}
+
+.family-images img {
+    width: 80%;
+}
+
+
+.footer-tag {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2em 4.5em;
+    font-size: .9em;
+}
+
+footer {
+    background: black;
+    color: var(--light);
+    width: 100vw;
+}
+
+@media(max-width: 1200px) {
+    .location-contact {
+        font-size: .9em;
+        padding: .5em 4em .5em .5em;
+    }
+    .badges img {
+        width: 20%;
+        padding: 2em 2em 1em 2em;
+    }
+    
+    .badges .longer {
+        width: 40%;
+    }
+    .blurb {
+        top: 30%;
+        font-size: 2em;
+        max-width: 600px
+    }
+
+    .card-group {
+        width: 80%;
+        font-size: .9em;
+    }
+    .location-info {
+        padding: 4.75em 2em;
+        font-size: .85em;
+    }
+}
+
+@media(max-width: 1050px) {
+    .location-contact {
+        font-size: .8em;
+        padding: .5em 5em .5em .5em;
+    }
+    .location-info {
+        padding: 5em 2em;
+        font-size: .8em;
+        line-height: .75em;
+    }
+    .blurb {
+        font-size: 2em;
+    }
+    .card-group {
+        width: 80%;
+        font-size: .9em;
+    }
+}
+
+@media(max-width: 992px) {
+    .location-info {
+        padding: 4em 2em;
+        font-size: .8em;
+        line-height: .6em;
+    }
+    .location-item h3 {
+        font-size: 1.5em;
+    }
+    .one {
+        height: 99%;
+    }
+    .card-group {
+        width: 82%;
+        font-size: .8em;
+    }
+    .card-group h5 {
+        font-size: 1.2em;
+    }
+    .blurb {
+        font-size: 2em;
+        max-width: 580px;
+    }
+    .badges {
+        padding: 0em 1em;
+    }
+    .affiliates h5 {
+        text-align: center;
+        padding: 2em 0 .5em 0;
+        font-size: 1.5em;
+    }
+}
+
+@media(max-width: 768px) {
+    .blurb {
+        font-size: 1.3em;
+    }
+    .container {
+        width: 100vw;
+    }
+    .one {
+        height: 98%;
+    }
+    .card-group {
+        flex-direction: column;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .card-body p {
+        font-size: .9em;
+    }
+
+    .card{
+        width: 100%;
+    }
+    .blurb {
+        font-size: 1.5em;
+        max-width: 480px;
+    }
+
+    .location-info {
+        font-size: .9em;
+    }
+    .fax{
+        margin-bottom: 1em;
+    }
+    .location-contact {
+        padding: .5em 6em .5em .5em;
+    }
+    .location-item img {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .location-info::after {
+        height: 0;
+        width: 0;
+    }
+    .badges {
+        flex-direction: column;
+        padding: 0;
+    }
+    .affiliates h5 {
+        padding-top: 3em;
+        font-size: 1.2em;
+    }
+    .badges img {
+        margin: 3em auto;
+        width: 25%;
+        padding: 0;
+    }
+    .badges .longer {
+        width: 45%;
+    }
+    .family-images {
+        width: 500px;
+    }
+    .footer-tag {
+        font-size: .8em;
+    }
+    .logo-container {
+        padding: 0 4em 0 2em;
+    }
+}
+
+@media(max-width: 576px) {
+    .affiliates h5 {
+        font-size: 1em;
+    }
+    .blurb {
+        font-size: 1em;
+        max-width: 300px;
+    }
+    .logo-container {
+        padding: 0 2em 0 1em;
+    }
+    .navbar-brand img {
+        width: 200px;
+        height: 50px;
+    }
+}

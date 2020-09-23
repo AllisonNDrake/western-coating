@@ -1,0 +1,100 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="page-wrapper">
+		{% include "include/nav.twig" %}
+	</div>
+	<div class="hero">
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				{% for item in post.meta('slide') %}
+					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
+						<img src="{{Image(item.image)}}" class="d-block w-100" alt="...">
+						<div class="container">
+							<h1 class="blurb">{{item.text}}</h1>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="page-wrapper">
+		<div class="container-fluid my-4">
+			<div class="card-group">
+				<div class="card p-3">
+					<img class="card-img-top mb-3" src="{{Image(post.card_card_1_image).src }}" alt="">
+					<div class="card-body-fluid">
+						<h5 class="font-weight-bold">{{post.card_card_1_title}}</h5>
+						<p>{{post.card_card_1_content}}</p>
+					</div>
+				</div>
+				<div class="card p-3">
+					<img class="card-img-top mb-3" src="{{Image(post.card_card_2_image).src }}" alt="">
+					<div class="card-body-fluid">
+						<h5 class="font-weight-bold">{{post.card_card_2_title}}</h5>
+						<p>{{post.card_card_2_content}}</p>
+					</div>
+				</div>
+				<div class="card p-3">
+					<img class="card-img-top mb-3" src="{{Image(post.card_card_3_image).src }}" alt="">
+					<div class="card-body-fluid">
+						<h5 class="font-weight-bold">{{post.card_card_3_title}}</h5>
+						<p>{{post.card_card_3_content}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="locations" class="container-fluid">
+			<div class="location-container">
+				{% for item in post.meta('locations') %}
+					<div class="location-item row">
+						<div class="col-md-6">
+							<img class="img-fluid ml-4 my-5" src="{{Image(item.image).src}}" alt="">
+						</div>
+						<div class="location-info  col-md-6">
+							<h3>{{item.name}}</h3>
+							<hr>
+							<p>{{item.street_address}}</p>
+							<p>{{item.city}},
+								{{item.state}}
+								{{item.zip}}</p>
+							<br>
+							<p>Phone:
+								{{item.phone}}</p>
+							<p>Toll Free:
+								{{item.fax}}</p>
+							<p>Fax:
+								{{item.toll_free}}
+							</p>
+							<p>
+								<a class="location-contact" href="mailto: wcsales_eu@westerncoating.com">email:{{item.email_address}}</a>
+							</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="product-images">
+		<div class="product-grid py-4">
+			<img class="one" src="{{Image(post.image_portrait).src}}" alt="">
+			<img class="two" src="{{Image(post.image_panorama).src}}" alt="">
+			<img class="three" src="{{Image(post.image_square_1).src}}" alt="">
+			<img class="four" src="{{Image(post.image_square_two).src}}" alt="">
+		</div>
+	</div>
+	<div class="conatiner-fluid">
+		<div class="affiliates">
+			<h5>{{post.heading}}</h5>
+			<div class="badges">
+				<img class="img-fluid" src="{{Image(post.logos[0])}}" alt="">
+				<img class="longer img-fluid" src="{{Image(post.logos[1])}}" alt="">
+				<img class="img-fluid" src="{{Image(post.logos[2])}}" alt="">
+			</div>
+		</div>
+	</div>
+
+	{% include "include/footer.twig" %}
+
+{% endblock %}
