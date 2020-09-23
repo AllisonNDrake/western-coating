@@ -39,7 +39,7 @@ body {
     
 }
 
-.page-wrapper {
+.wrapper {
     max-width: 1440px;
     margin: 0 auto;
     background: var(--body-bg);
@@ -58,7 +58,7 @@ body {
 .blurb {
     position: absolute;
     top: 40%;
-    left: 12.25%;
+    z-index: 1;
     max-width: 725px;
     font-size: 2.5em;
     padding: .5em 4em .5em 1.5em;
@@ -338,6 +338,7 @@ footer {
 
     .location-info {
         font-size: .9em;
+        margin-top: -5em;
     }
     .fax{
         margin-bottom: 1em;
@@ -348,6 +349,7 @@ footer {
     .location-item img {
         width: 90%;
         margin: 0 auto;
+        padding: 0;
     }
     .location-info::after {
         height: 0;

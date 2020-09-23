@@ -1,24 +1,25 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="page-wrapper">
+	<div class="wrapper">
 		{% include "include/nav.twig" %}
 	</div>
+
 	<div class="hero">
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
-				{% for item in post.meta('slide') %}
+					<div class="container wrapper">
+						<h1 class="blurb">{{post.banner_text}}</h1>
+					</div>
+				{% for item in post.meta('slides') %}
 					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
 						<img src="{{Image(item.image)}}" class="d-block w-100" alt="...">
-						<div class="container">
-							<h1 class="blurb">{{item.text}}</h1>
-						</div>
 					</div>
 				{% endfor %}
 			</div>
 		</div>
 	</div>
-	<div class="page-wrapper">
+	<div class="wrapper">
 		<div class="container-fluid my-4">
 			<div class="card-group">
 				<div class="card p-3">
