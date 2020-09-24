@@ -8,9 +8,9 @@
 	<div class="hero">
 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
-					<div class="container wrapper">
-						<h1 class="blurb">{{post.banner_text}}</h1>
-					</div>
+				<div class="container wrapper">
+					<h1 class="blurb">{{post.banner_text}}</h1>
+				</div>
 				{% for item in post.meta('slides') %}
 					<div class="carousel-item {{ loop.first ? 'active' : '' }}">
 						<img src="{{Image(item.image)}}" class="d-block w-100" alt="...">
@@ -45,7 +45,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div id="locations" class="container-fluid">
 			<div class="location-container">
 				{% for item in post.meta('locations') %}
@@ -69,8 +68,21 @@
 								{{item.toll_free}}
 							</p>
 							<p>
-								<a class="location-contact" href="mailto: wcsales_eu@westerncoating.com">email:{{item.email_address}}</a>
+								<a class="location-contact" href="mailto: {{item.email_address}}">{{item.email_address}}</a>
 							</p>
+							<br>
+							{% if item.certification %}
+								{% set count = 0 %}
+								{% for cert in item.certification %}
+									{% set count = count + 1 %}
+									{% if count > 1 %}
+										<a class="certs" href="{{cert.file.url}}"> | CRSI Plant Certification {{count}}</a>
+										{% else %}
+										<a class="certs" href="{{cert.file.url}}">CRSI Plant Certification</a>
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+
 						</div>
 					</div>
 				{% endfor %}
@@ -89,9 +101,9 @@
 		<div class="affiliates">
 			<h5>{{post.heading}}</h5>
 			<div class="badges">
-				<img class="img-fluid" src="{{Image(post.logos[0])}}" alt="">
-				<img class="longer img-fluid" src="{{Image(post.logos[1])}}" alt="">
-				<img class="img-fluid" src="{{Image(post.logos[2])}}" alt="">
+				<a href="{{post.logos_0_link.url}}"><img class="img-fluid" src="{{Image(post.logos_0_image).src}}" alt=""></a>
+				<a href="{{post.logos_1_link.url}}"><img class="img-fluid" src="{{Image(post.logos_1_image).src}}" alt=""></a>
+				<a href="{{post.logos_2_link.url}}"><img class="img-fluid" src="{{Image(post.logos_2_image).src}}" alt=""></a>
 			</div>
 		</div>
 	</div>
