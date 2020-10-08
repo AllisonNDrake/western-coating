@@ -52,7 +52,7 @@
 						<div class="col-md-6">
 							<img class="img-fluid ml-4 my-5" src="{{Image(item.image).src}}" alt="">
 						</div>
-						<div class="location-info  col-md-6">
+						<div class="location-info col-md-6">
 							<h3>{{item.name}}</h3>
 							<hr>
 							<p>{{item.street_address}}</p>
@@ -70,17 +70,15 @@
 							<p>
 								<a class="location-contact" href="mailto: {{item.email_address}}">{{item.email_address}}</a>
 							</p>
-							<br>
-							{% if item.certification %}
-								{% set count = 0 %}
-								{% for cert in item.certification %}
-									{% set count = count + 1 %}
-									{% if count > 1 %}
-										<a class="certs" href="{{cert.file.url}}"> | CRSI Plant Certification {{count}}</a>
-										{% else %}
-										<a class="certs" href="{{cert.file.url}}">CRSI Plant Certification</a>
-									{% endif %}
-								{% endfor %}
+							
+							{% if item.fab_cert and item.coat_cert %}
+								<a class="certs" href="{{item.fab_cert.url}}">{{item.fab_cert.title}}</a>
+								|
+								<a class="certs" href="{{item.coat_cert.url}}">{{item.coat_cert.title}}</a>
+							{% elseif item.fab_cert %}
+								<a class="certs" href="{{item.fab_cert.url}}">{{item.fab_cert.title}}</a>
+							{% elseif item.coat_cert %}
+								<a class="certs" href="{{item.coat_cert.url}}">{{item.coat_cert.title}}</a>
 							{% endif %}
 
 						</div>
@@ -93,7 +91,7 @@
 		<div class="product-grid py-4">
 			<img class="one" src="{{Image(post.image_portrait).src}}" alt="">
 			<img class="two" src="{{Image(post.image_panorama).src}}" alt="">
-			<img class="three" src="{{Image(post.image_square_1).src}}" alt="">
+			<img class="three" src="{{Image(post.image_square_one).src}}" alt="">
 			<img class="four" src="{{Image(post.image_square_two).src}}" alt="">
 		</div>
 	</div>
@@ -101,13 +99,14 @@
 		<div class="affiliates">
 			<h5>{{post.heading}}</h5>
 			<div class="badges">
-				<a href="{{post.logos_0_link.url}}"><img class="img-fluid" src="{{Image(post.logos_0_image).src}}" alt=""></a>
-				<a href="{{post.logos_1_link.url}}"><img class="img-fluid" src="{{Image(post.logos_1_image).src}}" alt=""></a>
-				<a href="{{post.logos_2_link.url}}"><img class="img-fluid" src="{{Image(post.logos_2_image).src}}" alt=""></a>
+				<a href="{{post.affiliates_affiliate_one_link.url}}"><img class="img-fluid" src="{{Image(post.affiliates_affiliate_one_image).src}}" alt=""></a>
+				<a href="{{post.affiliates_affiliate_two_link.url}}"><img class="img-fluid" src="{{Image(post.affiliates_affiliate_two_image).src}}" alt=""></a>
+				<a href="{{post.affiliates_affiliate_three_link.url}}"><img class="img-fluid" src="{{Image(post.affiliates_affiliate_three_image).src}}" alt=""></a>
 			</div>
 		</div>
 	</div>
 
 	{% include "include/footer.twig" %}
+
 
 {% endblock %}

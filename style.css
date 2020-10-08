@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     background-color: var(--body-bg);
     padding: 0;
     margin: 0;
@@ -73,15 +73,14 @@ body {
     font-size: 1.1em;
 }
 
-.certs{
+.certs {
     color: black !important;
-    list-style:none;
+    list-style: none;
     display: inline;
-    margin: 0;
-    padding: 0;
+    line-height: 1.5em;
 }
 
-a .certs:hover{
+a .certs:hover {
     color: var(--button-clr);
 }
 
@@ -103,7 +102,7 @@ a .certs:hover{
 .location-info {
     background: var(--light);
     padding: 4.75em 1em;
-    line-height: 1em;
+    line-height: .9em;
     position: relative;
     font-size: 1em;
 }
@@ -195,6 +194,10 @@ hr {
     align-items: center;
 }
 
+br {
+    line-height: .2em;
+}
+
 .badges img {
     width: 100%;
     padding: 1.5em;
@@ -224,7 +227,7 @@ hr {
 .footer-tag {
     display: flex;
     justify-content: flex-end;
-    margin: 2em 4.5em;
+    margin: 2em 4.5em 0;
     font-size: .9em;
 }
 
@@ -271,6 +274,7 @@ footer {
         width: 80%;
         font-size: .9em;
     }
+    
 }
 
 @media(max-width: 992px) {
@@ -375,6 +379,8 @@ footer {
 
 @media(max-width: 576px) {
     .affiliates h5 {
+        padding-left: 1em;
+        padding-right: 1em;
         font-size: 1em;
     }
     .blurb {
@@ -387,5 +393,24 @@ footer {
     .navbar-brand img {
         width: 200px;
         height: 50px;
+    }
+    nav .btn {
+        padding: .5em;
+        margin-right: -2em;
+        margin-top: -.5em;
+        font-size: .6em;
+    }
+}
+
+@media(max-width: 450px) {
+    .certs {
+        font-size: .8em;
+    }
+    .footer-tag {
+        font-size: .65em;
+    }
+
+    .badges img{
+        padding: 3em;
     }
 }
